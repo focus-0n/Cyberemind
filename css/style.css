@@ -1,1 +1,34 @@
 *{margin: 0;padding: 0;box-sizing: border-box;}
+
+body{
+    background-image: linear-gradient(rgb(202, 34, 220),purple);
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    color: rgb(255, 255, 255);
+}
+.container{
+      /* border: 2px solid red; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      
+      
+      
+}
+
+.container h1{
+    border: 3px solid rgb(200, 13, 147);
+    padding: 4px;
+    margin: 5px;
+    font-size: 44px;
+    cursor: progress;
+}
+#cyber{
+    cursor: pointer;
+    color: rgb(62, 62, 203);
+    border: none;
+
+}
