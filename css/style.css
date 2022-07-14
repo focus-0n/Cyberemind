@@ -1,33 +1,135 @@
-*{margin: 0;padding: 0;box-sizing: border-box;}
-
-body{
-    background-image: linear-gradient(rgb(202, 34, 220),purple);
-    width: 100%;
-    height: 100vh;
-    background-repeat: no-repeat;
-    color: rgb(255, 255, 255);
-}
-.container{
-      /* border: 2px solid red; */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      height: 100vh;
-      
-      
-      
+/* Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container h1{
-    border: 3px solid rgb(200, 13, 147);
-    padding: 4px;
-    margin: 5px;
-    font-size: 44px;
-    cursor: progress;
+body {
+    background-color: rgb(114, 37, 208);
 }
-#cyber{
-    cursor: pointer;
-    color: rgb(62, 62, 203);
-    border: none
+
+#logo{
+    position: absolute;
+    margin: 8px;
+    
+}
+nav {
+    background-color: rgb(136, 28, 238);
+}
+
+nav ul {
+    height: 45px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    margin-right: 34px;
+    text-decoration: none;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    padding: 8px;
+    color: white;
+}
+
+a:hover {
+    color: rgb(46, 223, 254);
+}
+
+
+
+
+@media only screen and (max-width:660px) {
+
+    #logo{
+        display: none;
+    }
+    #menu {
+        position: absolute;
+        width: 35px;
+        height: 30px;
+        margin: 20px;
+        cursor: pointer;
+        z-index: 100;
+        margin-left: 91%;
+      }
+
+    .bar {
+        height: 5px;
+        width: 100;
+        background-color: #ffff;
+        border-radius: 5px;
+        transition: 0.5s ease;
+        }
+
+    #bar1 {
+        transform: translateY(-4px);
+    }
+
+    #bar3 {
+        transform: translateY(4px);
+    }
+
+    .change {
+        background-color: #47a7f5;
+        height: 100vh;
+        margin: 0;
+        position: absolute;
+        font-size: 30px;
+        top: 0;
+        z-index: -100;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+  
+
+    .change1 {
+        display: flex;
+        flex-direction: column;
+    
+    }
+
+    .change2 {
+        display: flex;
+        justify-content: end;
+    }
+
+    
+    nav {
+        display: none;
+    }
+
+    .icon .bar {
+        background-color: #fff;
+    }
+
+    .icon #bar1 {
+        transform: translateY(4px) rotate(-45deg);
+    }
+
+    .icon #bar3 {
+        transform: translateY(-6px) rotate(45deg);
+    }
+
+    .icon #bar2 {
+        opacity: 0;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 500px) {
+    .change {
+        width: 100%;
+    }
+
 }
