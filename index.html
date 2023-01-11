@@ -5,46 +5,116 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
     <title>Cyberemind</title>
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <style>
-
-
-    </style>
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: rgb(101, 241, 195);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 580px;
+    }
+
+    .title {
+        margin: 0 auto;
+        text-align: center;
+        font-size: 2rem;
+        color: rgb(0, 0, 0);
+    }
+
+
+    label {
+        color: rgb(0, 0, 0);
+        /* margin: auto 45px; */
+        text-align: center;
+    }
+
+    input {
+        text-align: center;
+        font-size: 4rem;
+        width: 100px;
+        padding: 5px;
+        border: none;
+        border-right: 1px solid;
+        border-radius: 2px;
+    }
+
+    .col {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
 
 <body>
-    <div id="navigation">
-         <a href="/#home" id="logo"><img src="/images/favicon-32x32.png" alt=""></a>
-        <div id="menu" onclick="onClickMenu()">
-            <div class="bar" id="bar1"></div>
-            <div class="bar" id="bar2"></div>
-            <div class="bar" id="bar3"></div>
+
+    <div class="overlay">
+        <div class="title">We are coming soon!</div>
+        <div class="title" id="end-date">20 March 2023 10:00 pm</div>
+
+        <div class="col">
+            <div>
+                <input type="text" readonly value="0">
+                <br>
+                <label for="">Days</label>
+            </div>
+            <div>
+                <input type="text" readonly value="0">
+                <br>
+                <label for="">Hours</label>
+            </div>
+
+            <div>
+                <input type="text" readonly value="0">
+                <br>
+                <label for="">Minutes</label>
+            </div>
+
+            <div>
+                <input type="text" readonly value="0">
+                <br>
+                <label for="">Seconds</label>
+            </div>
         </div>
-
-        <nav id="nav">
-            <ul id="navo">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Blogs</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">Community</a></li>
-                <li><a href="#">Forms</a></li>
-
-            </ul>
-        </nav>
     </div>
 
+
     <script>
-        function onClickMenu(){
-    document.getElementById("menu").classList.toggle("icon");
-    document.getElementById("nav").classList.toggle("change");
-    document.getElementById("navo").classList.toggle("change1");
-    document.getElementById("navigation").classList.toggle("change2");
-}
+        const endDate = "1 March 2023 10:00 pm";
+
+        document.getElementById('end-date').innerText = endDate;
+        const inputs = document.querySelectorAll('input')
+
+
+        function clock() {
+            const end = new Date(endDate)
+            const now = new Date()
+            const diff = (end - now) / 1000;
+
+            if (diff < 0) return;
+            console.log(diff);
+            inputs[0].value = Math.floor(diff / 3600 / 24);
+            inputs[1].value = (Math.floor(diff / 3600) % 24);
+            inputs[2].value = (Math.floor(diff / 60) % 60);
+            inputs[3].value = (Math.floor(diff) % 60);
+
+
+        }
+        clock();
+
+
+        setInterval(() => {
+            clock()
+        }, 1000);
     </script>
 </body>
+
 </html>
