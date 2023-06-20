@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -93,7 +92,6 @@
         document.getElementById('end-date').innerText = endDate;
         const inputs = document.querySelectorAll('input')
 
-
         function clock() {
             const end = new Date(endDate)
             const now = new Date()
@@ -106,10 +104,8 @@
             inputs[2].value = (Math.floor(diff / 60) % 60);
             inputs[3].value = (Math.floor(diff) % 60);
 
-
         }
         clock();
-
 
         setInterval(() => {
             clock()
